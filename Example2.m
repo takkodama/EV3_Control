@@ -23,9 +23,9 @@ userIn = '';
 % motor power
 motorPower = 10;
 % set motor power and start
-b.outputPower(0,Device.MotorA, 0)
-b.outputPower(0,Device.MotorB, 0)
-b.outputPower(0,Device.MotorD, 0)
+b.outputPower(0,Device.MotorA,motorPower)
+b.outputStart(0,Device.MotorA)
+
 
 while(~strcmp(userIn,'f'))
     % get input
@@ -36,26 +36,26 @@ while(~strcmp(userIn,'f'))
         if motorPower >= 100
             motorPower = 100;
         end
-        b.outputPower(0,Device.MotorB,motorPower)
+        b.outputPower(0,Device.MotorA,motorPower)
         disp(['> Motor Power: ' num2str(motorPower)]);
     end
      % decrease speed
-    if (userIn == 'bd')
+    if (userIn == 'd')
         motorPower = motorPower-10;
         if motorPower <= -100
             motorPower = -100;
         end
-        b.outputPower(0,Device.MotorB,motorPower)
+        b.outputPower(0,Device.MotorA,motorPower)
         disp(['> Motor Power: ' num2str(motorPower)]);
     end
     % start the motor
     if (userIn == 't')
-        b.outputStart(0,Device.MotorB)
+        b.outputStart(0,Device.MotorA)
         disp('> Motor Started');
     end
     % stop the motor
     if (userIn == 's')
-        b.outputStop(0,Device.MotorB,0)
+        b.outputStop(0,Device.MotorA,0)
         disp('> Motor Stopped');
     end
     % beep test
