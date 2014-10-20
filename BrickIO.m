@@ -16,7 +16,7 @@ classdef BrickIO
         % connection handle
         handle
     end
-    
+
     methods (Abstract)
         % open the brick connection
         open(BrickIO)
