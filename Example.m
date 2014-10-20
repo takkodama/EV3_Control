@@ -28,6 +28,9 @@ motorPowerD = 10;
 b.outputPower(0,Device.MotorA, 0)
 b.outputPower(0,Device.MotorB, 0)
 b.outputPower(0,Device.MotorD, 0)
+b.outputClrCount(0,Device.MotorA)
+b.outputClrCount(0,Device.MotorB)
+b.outputClrCount(0,Device.MotorD)
 
 while(~strcmp(userIn,'q'))
     % get input
@@ -56,28 +59,37 @@ while(~strcmp(userIn,'q'))
 
     % turn right
     if (userIn == 'r')
-        b.outputPower(0,Device.MotorD, 50)
-        b.outputStart(0,Device.MotorD)
-        pause(0.5)
-        b.outputStop(0,Device.MotorD,0)
+        %b.outputPower(0,Device.MotorD, 50)
+        %b.outputStart(0,Device.MotorD)
+        %pause(0.8)
+        %b.outputStop(0,Device.MotorD,0)
+        b.outputStepSpeed(0,Device.MotorD,30,0,300,0,Device.Brake)
         disp('> Right');
+        tachoD = b.outputGetCount(0,Device.MotorD);
+        disp(['> Tachometer: ' num2str(tachoD)]);
+
     end
 
     % turn left
     if (userIn == 'l')
-        b.outputPower(0,Device.MotorD, -50)
-        b.outputStart(0,Device.MotorD)
-        pause(0.5)
-        b.outputStop(0,Device.MotorD,0)
+        %b.outputPower(0,Device.MotorD, -50)
+        %b.outputStart(0,Device.MotorD)
+        %pause(0.6)
+        %b.outputStop(0,Device.MotorD,0)
+        b.outputStepSpeed(0,Device.MotorD,-30,0,300,0,Device.Brake)
         disp('> Left');
+        tachoD = b.outputGetCount(0,Device.MotorD);
+        disp(['> Tachometer: ' num2str(tachoD)]);
     end
 
     % arm up
     if (userIn == 'u')
         b.outputPower(0,Device.MotorB, -60)
         b.outputStart(0,Device.MotorB)
-        pause(1.0)
+        pause(1.5)
         disp('> Up');
+        tachoB = b.outputGetCount(0,Device.MotorB);
+        disp(['> Tachometer: ' num2str(tachoB)]);
     end
 
     % arm down
@@ -87,23 +99,30 @@ while(~strcmp(userIn,'q'))
         pause(0.5)
         b.outputStop(0,Device.MotorB,0)
         disp('> Down');
+        tachoB = b.outputGetCount(0,Device.MotorB);
+        disp(['> Tachometer: ' num2str(tachoB)]);
     end
 
     % hand open
     if (userIn == 'o')
-        b.outputPower(0,Device.MotorA, -60)
+        b.outputPower(0,Device.MotorA, -90)
         b.outputStart(0,Device.MotorA)
-        pause(1.0)
+        pause(0.3)
+        b.outputStop(0,Device.MotorA,0)
         disp('> Open');
+        tachoA = b.outputGetCount(0,Device.MotorA);
+        disp(['> Tachometer: ' num2str(tachoA)]);
     end
 
     % hand close
     if (userIn == 'c')
-        b.outputPower(0,Device.MotorB, 30)
-        b.outputStart(0,Device.MotorB)
+        b.outputPower(0,Device.MotorA, 100)
+        b.outputStart(0,Device.MotorA)
         pause(0.5)
-        b.outputStop(0,Device.MotorB,0)
-        disp('> Down');
+        b.outputStop(0,Device.MotorA,0)
+        disp('> Close');
+        tachoA = b.outputGetCount(0,Device.MotorA);
+        disp(['> Tachometer: ' num2str(tachoA)]);
     end
 
 
@@ -116,13 +135,13 @@ while(~strcmp(userIn,'q'))
 
     %===============================
     % output the tachometer
-    if (userIn == 'o')
+    if (userIn == 'to')
         tacho = b.outputGetCount(0,Device.MotorA);
         disp(['> Tachometer: ' num2str(tacho)]);
     end
 
     % clear the tachometer
-    if (userIn == 'c')
+    if (userIn == 'tc')
         b.outputClrCount(0,Device.MotorA)
         disp('> Cleared tacho');
     end
