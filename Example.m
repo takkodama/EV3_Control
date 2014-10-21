@@ -59,11 +59,7 @@ while(~strcmp(userIn,'q'))
 
     % turn right
     if (userIn == 'r')
-        %b.outputPower(0,Device.MotorD, 50)
-        %b.outputStart(0,Device.MotorD)
-        %pause(0.8)
-        %b.outputStop(0,Device.MotorD,0)
-        b.outputStepSpeed(0,Device.MotorD,30,0,300,0,Device.Brake)
+        b.outputStepSpeed(0,Device.MotorD,30,0,240,0,Device.Brake)
         disp('> Right');
         tachoD = b.outputGetCount(0,Device.MotorD);
         disp(['> Tachometer: ' num2str(tachoD)]);
@@ -72,11 +68,7 @@ while(~strcmp(userIn,'q'))
 
     % turn left
     if (userIn == 'l')
-        %b.outputPower(0,Device.MotorD, -50)
-        %b.outputStart(0,Device.MotorD)
-        %pause(0.6)
-        %b.outputStop(0,Device.MotorD,0)
-        b.outputStepSpeed(0,Device.MotorD,-30,0,300,0,Device.Brake)
+        b.outputStepSpeed(0,Device.MotorD,-30,0,240,0,Device.Brake)
         disp('> Left');
         tachoD = b.outputGetCount(0,Device.MotorD);
         disp(['> Tachometer: ' num2str(tachoD)]);
@@ -84,7 +76,7 @@ while(~strcmp(userIn,'q'))
 
     % arm up
     if (userIn == 'u')
-        b.outputPower(0,Device.MotorB, -60)
+        b.outputPower(0,Device.MotorB, -70)
         b.outputStart(0,Device.MotorB)
         pause(1.5)
         disp('> Up');
@@ -107,7 +99,7 @@ while(~strcmp(userIn,'q'))
     if (userIn == 'o')
         b.outputPower(0,Device.MotorA, -90)
         b.outputStart(0,Device.MotorA)
-        pause(0.3)
+        pause(0.25)
         b.outputStop(0,Device.MotorA,0)
         disp('> Open');
         tachoA = b.outputGetCount(0,Device.MotorA);
