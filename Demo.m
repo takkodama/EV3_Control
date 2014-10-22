@@ -24,13 +24,18 @@ userIn = '';
 motorPowerA = 10;
 motorPowerB = 10;
 motorPowerD = 10;
-% set motor power and start
+% set motor power
 b.outputPower(0,Device.MotorA, 0)
 b.outputPower(0,Device.MotorB, 0)
 b.outputPower(0,Device.MotorD, 0)
+% reset motor
 b.outputClrCount(0,Device.MotorA)
 b.outputClrCount(0,Device.MotorB)
 b.outputClrCount(0,Device.MotorD)
+% motor state
+stateMotorA = 0;
+stateMotorB = 0;
+stateMotorD = 0;
 
 while(~strcmp(userIn,'q'))
     % get input
@@ -47,6 +52,9 @@ while(~strcmp(userIn,'q'))
     if (userIn == 's')
         b.outputStart(0,Device.MotorB)
         disp('> Motor Started');
+        disp(['> stateMotorA: ' num2str(stateMotorA)]);
+        disp(['> stateMotorB: ' num2str(stateMotorB)]);
+        disp(['> stateMotorD: ' num2str(stateMotorD)]);
     end
 
     % stop the motor
@@ -63,6 +71,8 @@ while(~strcmp(userIn,'q'))
         disp('> Right');
         tachoD = b.outputGetCount(0,Device.MotorD);
         disp(['> Tachometer: ' num2str(tachoD)]);
+        stateMotorD = stateMotorD + 1;
+        disp(['> stateMotorD: ' num2str(stateMotorD)]);
 
     end
 
@@ -72,6 +82,9 @@ while(~strcmp(userIn,'q'))
         disp('> Left');
         tachoD = b.outputGetCount(0,Device.MotorD);
         disp(['> Tachometer: ' num2str(tachoD)]);
+        stateMotorD = stateMotorD - 1;
+        disp(['> stateMotorD: ' num2str(stateMotorD)]);
+
     end
 
     % arm up
@@ -82,6 +95,9 @@ while(~strcmp(userIn,'q'))
         disp('> Up');
         tachoB = b.outputGetCount(0,Device.MotorB);
         disp(['> Tachometer: ' num2str(tachoB)]);
+        stateMotorB = stateMotorB + 1;
+        disp(['> stateMotorB: ' num2str(stateMotorB)]);
+
     end
 
     % arm down
@@ -93,6 +109,9 @@ while(~strcmp(userIn,'q'))
         disp('> Down');
         tachoB = b.outputGetCount(0,Device.MotorB);
         disp(['> Tachometer: ' num2str(tachoB)]);
+        stateMotorB = stateMotorB - 1;
+        disp(['> stateMotorB: ' num2str(stateMotorB)]);
+
     end
 
     % hand open
@@ -104,6 +123,9 @@ while(~strcmp(userIn,'q'))
         disp('> Open');
         tachoA = b.outputGetCount(0,Device.MotorA);
         disp(['> Tachometer: ' num2str(tachoA)]);
+        stateMotorA = stateMotorA + 1;
+        disp(['> stateMotorA: ' num2str(stateMotorA)]);
+
     end
 
     % hand close
@@ -115,6 +137,8 @@ while(~strcmp(userIn,'q'))
         disp('> Close');
         tachoA = b.outputGetCount(0,Device.MotorA);
         disp(['> Tachometer: ' num2str(tachoA)]);
+        stateMotorA = stateMotorA - 1;
+        disp(['> stateMotorA: ' num2str(stateMotorA)]);
     end
 
 
