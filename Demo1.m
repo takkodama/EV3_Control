@@ -1,9 +1,10 @@
-% init the connection
+s% init the connection
 disp('Connecting ... ')
 % brick usb init
 b = Brick('ioType','usb');
 % beep to indicate connection
 b.beep();
+
 % print information
 disp('===================================')
 disp('EV3 example code')
@@ -50,7 +51,7 @@ while(~strcmp(userIn,'q'))
 
     % start the motor
     if (userIn == 's')
-        b.outputStart(0,Device.MotorB)
+        b.outputStart(0,Device.MotorB);
         disp('> Motor Started');
         disp(['> stateMotorA: ' num2str(stateMotorA)]);
         disp(['> stateMotorB: ' num2str(stateMotorB)]);
@@ -59,9 +60,9 @@ while(~strcmp(userIn,'q'))
 
     % stop the motor
     if (userIn == 'h')
-        b.outputStop(0,Device.MotorA,0)
-        b.outputStop(0,Device.MotorB,0)
-        b.outputStop(0,Device.MotorD,0)
+        b.outputStop(0,Device.MotorA,0);
+        b.outputStop(0,Device.MotorB,0);
+        b.outputStop(0,Device.MotorD,0);
         disp('> Motor Stopped');
     end
 
@@ -69,7 +70,7 @@ while(~strcmp(userIn,'q'))
     if (userIn == 'r')
 
         if(stateMotorD < 1)
-            b.outputStepSpeed(0,Device.MotorD,30,0,240,0,Device.Brake)
+            b.outputStepSpeed(0,Device.MotorD,30,0,240,0,Device.Brake);
             disp('> Right');
             tachoD = b.outputGetCount(0,Device.MotorD);
             disp(['> Tachometer: ' num2str(tachoD)]);
