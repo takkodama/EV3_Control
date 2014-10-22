@@ -102,41 +102,27 @@ while(~strcmp(userIn,'q'))
 
     % arm up
     if (userIn == 'u')
-        if(stateMotorB < 1)
-            b.outputPower(0,Device.MotorB, -70)
-            b.outputStart(0,Device.MotorB)
-            pause(1.5)
-            disp('> Up');
-            tachoB = b.outputGetCount(0,Device.MotorB);
-            disp(['> Tachometer: ' num2str(tachoB)]);
-            stateMotorB = stateMotorB + 1;
-            disp(['> stateMotorB: ' num2str(stateMotorB)]);
-        else
-            b.beep();
-            disp('> Beep');
-            disp('Cannot go to up anymore !');
-        end
-
+        b.outputPower(0,Device.MotorB, -70)
+        b.outputStart(0,Device.MotorB)
+        pause(1.5)
+        disp('> Up');
+        tachoB = b.outputGetCount(0,Device.MotorB);
+        disp(['> Tachometer: ' num2str(tachoB)]);
+        stateMotorB = stateMotorB + 1;
+        disp(['> stateMotorB: ' num2str(stateMotorB)]);
     end
 
     % arm down
     if (userIn == 'd')
-        if(stateMotorB > 0)
-            b.outputPower(0,Device.MotorB, 30)
-            b.outputStart(0,Device.MotorB)
-            pause(0.5)
-            b.outputStop(0,Device.MotorB,0)
-            disp('> Down');
-            tachoB = b.outputGetCount(0,Device.MotorB);
-            disp(['> Tachometer: ' num2str(tachoB)]);
-            stateMotorB = stateMotorB - 1;
-            disp(['> stateMotorB: ' num2str(stateMotorB)]);
-        else
-            b.beep();
-            disp('> Beep');
-            disp('Cannot go to down anymore !');
-        end
-
+        b.outputPower(0,Device.MotorB, 30)
+        b.outputStart(0,Device.MotorB)
+        pause(0.5)
+        b.outputStop(0,Device.MotorB,0)
+        disp('> Down');
+        tachoB = b.outputGetCount(0,Device.MotorB);
+        disp(['> Tachometer: ' num2str(tachoB)]);
+        stateMotorB = stateMotorB - 1;
+        disp(['> stateMotorB: ' num2str(stateMotorB)]);
     end
 
     % hand open
