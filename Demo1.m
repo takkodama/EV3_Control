@@ -1,4 +1,4 @@
-s% init the connection
+% init the connection
 disp('Connecting ... ')
 % brick usb init
 b = Brick('ioType','usb');
