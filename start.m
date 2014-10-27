@@ -6,7 +6,7 @@ b.beep();
 disp('===================================')
 
 while char(mssg)-48 < 6
-    mssg = judp('receive', 3334, 1);
+    mssg = judp('receive', 3335, 1);
 
     char(mssg)
     switch char(mssg)
