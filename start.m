@@ -5,6 +5,11 @@ b.beep();
 
 disp('===================================')
 
+% motor state
+stateMotorA = 0;
+stateMotorB = 0;
+stateMotorD = 0;
+
 while char(mssg)-48 < 6
     mssg = judp('receive', 3335, 1);
 
@@ -88,3 +93,6 @@ while char(mssg)-48 < 6
     end
 mssg=48;
 end
+
+delete(b)
+clear

@@ -5,20 +5,10 @@ b = Brick('ioType','usb');
 % beep to indicate connection
 b.beep();
 
-% print information
-disp('===================================')
-disp('EV3 example code')
-disp('===================================')
-disp('u - increase motor speed')
-disp('d - decrease motor speed')
-disp('t - start the motor')
-disp('s - stop the motor')
-disp('b - beep')
-disp('o - output the tachometer')
-disp('c - clear the tachometer')
-disp('v - output the brick voltage')
-disp('q - quit the program');
-disp('===================================')
+% motor state
+stateMotorA = 0;
+stateMotorB = 0;
+stateMotorD = 0;
 % user intput
 userIn = '';
 % motor power
@@ -33,10 +23,11 @@ b.outputPower(0,Device.MotorD, 0)
 b.outputClrCount(0,Device.MotorA)
 b.outputClrCount(0,Device.MotorB)
 b.outputClrCount(0,Device.MotorD)
-% motor state
-stateMotorA = 0;
-stateMotorB = 0;
-stateMotorD = 0;
+
+% print information
+disp('===================================')
+disp('EV3 example code')
+disp('===================================')
 
 while(~strcmp(userIn,'q'))
     % get input
@@ -178,3 +169,4 @@ while(~strcmp(userIn,'q'))
 end
 % delete the brick object
 delete(b)
+clear
