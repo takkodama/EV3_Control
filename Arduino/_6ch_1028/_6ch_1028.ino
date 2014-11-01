@@ -39,43 +39,18 @@ void loop() {
 
   switch (outCHN) {
     case 0:
-      digitalWrite(pin[1], HIGH);
-      delayMicroseconds(tone_small / 2);
-      digitalWrite(pin[1], LOW);
-      delayMicroseconds(tone_small / 2);
-
-      digitalWrite(pin[5], HIGH);
-      digitalWrite(pin[7], HIGH);
-      digitalWrite(pin[9], HIGH);
+      digitalWrite(pin[3], HIGH);
       delayMicroseconds(tone_big / 2);
-      digitalWrite(pin[5], LOW);
-      digitalWrite(pin[7], LOW);
-      digitalWrite(pin[9], LOW);
+      digitalWrite(pin[3], LOW);
       delayMicroseconds(tone_big / 2);
       break;
     case 1:
-      digitalWrite(pin[2], HIGH);
-      delayMicroseconds(tone_small / 2);
-      digitalWrite(pin[2], LOW);
-      delayMicroseconds(tone_small / 2);
-
-      digitalWrite(pin[6], HIGH);
-      digitalWrite(pin[8], HIGH);
-      digitalWrite(pin[10], HIGH);
+      digitalWrite(pin[4], HIGH);
       delayMicroseconds(tone_big / 2);
-      digitalWrite(pin[6], LOW);
-      digitalWrite(pin[7], LOW);
-      digitalWrite(pin[10], LOW);
+      digitalWrite(pin[4], LOW);
       delayMicroseconds(tone_big / 2);
       break;
     case 2:
-      digitalWrite(pin[1], HIGH);
-      digitalWrite(pin[2], HIGH);
-      delayMicroseconds(tone_small / 2);
-      digitalWrite(pin[1], LOW);
-      digitalWrite(pin[2], LOW);
-      delayMicroseconds(tone_small / 2);
-
       digitalWrite(pin[5], HIGH);
       digitalWrite(pin[6], HIGH);
       delayMicroseconds(tone_big / 2);
@@ -86,30 +61,22 @@ void loop() {
     case 3:
       digitalWrite(pin[7], HIGH);
       digitalWrite(pin[8], HIGH);
-      digitalWrite(pin[9], HIGH);
-      digitalWrite(pin[10], HIGH);
       delayMicroseconds(tone_big / 2);
       digitalWrite(pin[7], LOW);
       digitalWrite(pin[8], LOW);
-      digitalWrite(pin[9], LOW);
-      digitalWrite(pin[10], LOW);
       delayMicroseconds(tone_big / 2);
       break;
     case 4:
-      digitalWrite(pin[3], HIGH);
-      digitalWrite(pin[4], HIGH);
+      digitalWrite(pin[9], HIGH);
       delayMicroseconds(tone_big / 2);
-      digitalWrite(pin[3], LOW);
-      digitalWrite(pin[4], LOW);
+      digitalWrite(pin[9], LOW);
       delayMicroseconds(tone_big / 2);
       break;
     case 5:
-      digitalWrite(pin[11], HIGH);
-      digitalWrite(pin[12], HIGH);
-      delayMicroseconds(tone_strong_high / 2);
-      digitalWrite(pin[11], LOW);
-      digitalWrite(pin[12], LOW);
-      delayMicroseconds(tone_strong_high / 2);
+      digitalWrite(pin[10], HIGH);
+      delayMicroseconds(tone_big/ 2);
+      digitalWrite(pin[10], LOW);
+      delayMicroseconds(tone_big / 2);
 
       break;
     default:
