@@ -10,6 +10,7 @@
 - You can control the motor of the LEGO NXT easily, without using official GUI programming software.
 - You can do effective robot control because this program can control the MATLAB software by using the UDP connection from the Max6 software.
 - In a default Max6 patch, the six commands are written to control robot, which movements are defined switch-case function in ```start.m``` file.
+	- For more detail code instruction, please see at [this link](https://wiki.qut.edu.au/display/cyphy/Usage).
 
 (Ja)
 
@@ -18,6 +19,7 @@
 	* ```key```を利用して特定のキーが押されるとロボットが動くようにしたり、```mxj net.udp.recv```を利用して他のソフトウェアからudp通信を受け取って処理することも可能
 	* 筆者は以上機能を使って、研究開発に使用している(詳細ファイルは非公開)
 - デフォルトパッチでは6つのコマンドが用意されており、それぞれの動作は```start.m```内のswitch文内に指示されている各動作から定義することができる
+	- より詳細なコードの書き方については、[こちら](https://wiki.qut.edu.au/display/cyphy/Usage)を参照してください
 
 
 ## How to use?
