@@ -11,7 +11,7 @@ stateMotorB = 0;
 stateMotorD = 0;
 
 while char(mssg)-48 < 6
-    mssg = judp('receive', 3335, 1);
+    mssg = judp('receive', 3337, 1);
 
     char(mssg)
     switch char(mssg)

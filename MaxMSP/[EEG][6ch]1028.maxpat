@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 2,
-			"architecture" : "x86"
+			"revision" : 7,
+			"architecture" : "x64"
 		}
 ,
-		"rect" : [ 22.0, 133.0, 1368.0, 743.0 ],
+		"rect" : [ 73.0, 65.0, 986.0, 664.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -230,8 +230,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 212.247986, 613.616699, 41.0, 18.0 ],
-					"text" : "port d"
+					"patching_rect" : [ 212.247986, 613.616699, 38.0, 18.0 ],
+					"text" : "port f"
 				}
 
 			}
@@ -529,8 +529,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 626.541626, 279.0, 109.0, 76.0 ],
-					"text" : "3"
+					"patching_rect" : [ 626.541626, 279.0, 109.0, 78.0 ],
+					"text" : "0"
 				}
 
 			}
@@ -614,7 +614,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 639.062988, 408.999817, 280.0, 20.0 ],
-					"text" : "mxj net.udp.send @address 127.0.0.1 @port 3335"
+					"text" : "mxj net.udp.send @address 127.0.0.1 @port 3337"
 				}
 
 			}
@@ -684,7 +684,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 97.247986, 253.679428, 32.5, 18.0 ],
-					"text" : "5"
+					"text" : "2"
 				}
 
 			}
@@ -870,7 +870,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 97.247986, 26.802505, 171.0, 20.0 ],
-					"text" : "mxj net.udp.recv @port 20322"
+					"text" : "mxj net.udp.recv @port 20321"
 				}
 
 			}
@@ -1370,7 +1370,7 @@
 					"destination" : [ "obj-47", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 333.926544, 163.240967, 344.499573, 163.240967 ],
+					"midpoints" : [ 333.926557, 163.240967, 344.499573, 163.240967 ],
 					"source" : [ "obj-67", 5 ]
 				}
 
@@ -1380,7 +1380,7 @@
 					"destination" : [ "obj-48", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 317.640839, 163.240967, 313.997986, 163.240967 ],
+					"midpoints" : [ 317.640843, 163.240967, 313.997986, 163.240967 ],
 					"source" : [ "obj-67", 4 ]
 				}
 
@@ -1390,7 +1390,7 @@
 					"destination" : [ "obj-49", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 301.355133, 163.240967, 286.476624, 163.240967 ],
+					"midpoints" : [ 301.355129, 163.240967, 286.476624, 163.240967 ],
 					"source" : [ "obj-67", 3 ]
 				}
 
@@ -1400,7 +1400,7 @@
 					"destination" : [ "obj-50", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 285.069427, 163.240967, 258.997986, 163.240967 ],
+					"midpoints" : [ 285.069415, 163.240967, 258.997986, 163.240967 ],
 					"source" : [ "obj-67", 2 ]
 				}
 
@@ -1410,7 +1410,7 @@
 					"destination" : [ "obj-51", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 268.783691, 163.240967, 232.417236, 163.240967 ],
+					"midpoints" : [ 268.7837, 163.240967, 232.417236, 163.240967 ],
 					"source" : [ "obj-67", 1 ]
 				}
 
