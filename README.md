@@ -1,6 +1,7 @@
 # EV3_Control
 
-MATLAB と Max6 を組み合わせたLEGO EV3ロボットのコントロール方法
+(Ja) LEGO EV3ロボットを [MATLAB](http://www.mathworks.co.jp/products/matlab/?refresh=true) と [Max6](http://www.mi7.co.jp/products/cycling74/)
+ の2ソフトを利用してコントロールする
 
 ## メリット
 より手軽にロボットのコントロールができる
